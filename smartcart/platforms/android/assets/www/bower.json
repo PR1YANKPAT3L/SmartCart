@@ -1,0 +1,28 @@
+{
+  "name": "bower_components",
+  "version": "1.0.0",
+  "authors": [
+    "silentkoder <priyank.patel@uoit.net>"
+  ],
+  "description": "SmartCart Polymer App",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "smartcart",
+    "rfid",
+    "arduino"
+  ],
+  "license": "MIT",
+  "homepage": "http://hextekdesign.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "polymer/polymer#~0.5.5"
+  }
+}

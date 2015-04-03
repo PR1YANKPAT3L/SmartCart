@@ -1,0 +1,335 @@
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background: #FFFFFF;
+    background-attachment:fixed;
+    font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
+    font-size:12px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    text-transform:uppercase;
+    width:100%;
+}
+
+body.loginPg {
+    overflow: none !important;
+}
+
+/* Portrait layout (default) */
+paper-tabs, core-toolbar {
+    background-color: #304FFE;
+    color: #fff;
+    box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
+}
+
+core-toolbar paper-tabs {
+    box-shadow: none;
+}
+
+paper-tabs::shadow #selectionBar {
+  background-color: #ffffff;
+}
+
+paper-tab::shadow #ink {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* LOGIN HEADER */
+header.login-header {
+    min-height: 180px;
+    height: 30%;
+    display: block;
+    width: 100%;
+    background: #304FFE;
+}
+
+core-pages.login-contents {
+    width: 100%;
+    height: 100%;
+}
+
+core-pages.login-contents div {
+    padding-left: 200px !important;
+}
+
+core-pages.login-contents div:nth-child(2) {
+    overflow-y: scroll !important;
+}
+
+paper-input-decorator {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+paper-input-decorator input {
+    font-size: 30px;
+}
+
+paper-button {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-left: 10%;
+    background: #304FFE;
+    color: #FFF;
+    padding: 5px;
+}
+
+paper-button span {
+    margin-left: 50px;
+}
+
+.forgot,
+.forgot a {
+    text-align: center;
+    margin-top: 30px;
+    font-weight: 300;
+    text-decoration: none;
+    color: #222;
+}
+
+paper-toast {
+    line-height: 48px;
+    padding-left: 20px;
+    text-transform: none;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+paper-toast.success {
+    background: #DFF2BF;
+    color: #4F8A10;
+}
+
+paper-toast.error {
+    background: #FFBABA;
+    color: #D8000C;
+}
+
+paper-toast.info {
+    background: #BDE5F8;
+    color: #00529B;
+}
+
+paper-spinner.white::shadow .circle {
+    border-color: #FFFFFF;
+  }
+
+paper-spinner.white {
+    margin-left: -100px !important;
+}
+
+/* LIST STYLESHEET */
+core-scroll-header-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: #eee;
+    }
+
+    /* background for toolbar when it is at its full size */
+    core-scroll-header-panel::shadow #headerBg {
+      background-color: #304FFE;
+    }
+
+    /* background for toolbar when it is condensed */
+    core-scroll-header-panel::shadow #condensedHeaderBg {
+      background-color: #304FFE;
+    }
+
+    core-toolbar {
+      color: #f1f1f1;
+      fill: #f1f1f1;
+      background-color: transparent;
+    }
+
+    .title {
+      -webkit-transform-origin: 0;
+      transform-origin: 0;
+      font-size: 40px;
+    }
+
+    .content {
+      padding: 8px;
+    }
+
+    .bottom.indent.title {
+        font-size: 25px;
+    }
+
+    core-icon-button[icon='settings-power'],
+    core-icon-button[icon='account-circle'],
+    core-icon-button[icon='settings'],
+    core-icon-button[icon='arrow-back'] {
+        border-radius: 50% !important;
+        padding: 10px !important;
+    }
+    
+    core-icon-button::shadow #ripple {
+      color: white;
+    }
+
+    .logoutConfirmationDialog {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: -1 !important;
+        -webkit-transition: all 1s;
+        -o-transition: all 1s;
+        transition: all 1s;
+    }
+
+    .logoutConfirmationDialog.active {
+        opacity: 1;
+        z-index: 99 !important;
+    }
+
+    .logoutConfirmationDialog .logoutConfirmationContent {
+        background: rgba(255, 255, 255, 0.999);
+        width: 70%;
+        height: auto;
+        border-radius: 5px;
+        position: absolute;
+        top: 40%;
+        left: 10%;
+        padding: 20px;
+    }
+
+    .logoutConfirmationContent h2 {
+        padding-bottom: 20px;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: #393938;
+    }
+
+    .logoutConfirmationContent div {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 13px;
+        color: #393938;
+    }
+
+    .logoutConfirmationContent .logoutControls {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: right;
+    }
+
+    .logoutConfirmationContent .logoutControls a {
+        color: #069684 !important;
+        text-decoration: none;
+        display: inline-block;
+        padding-right: 20px;
+        cursor: pointer;
+    }
+
+    #cartCheckout {
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+    }
+
+    .checkoutBody {
+        /*overflow: hidden;*/
+    }
+
+    .checkoutContent {
+        width: 89%;
+        height: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 20px;
+    }
+
+    .checkoutTitle {
+        font-size: 20px;
+        color: #304FFE;
+        font-weight: 500;
+    }
+
+    input[name='checkoutPromotionalCode'] {
+        margin-top: 10px;
+        width: 80%;
+        padding: 10px;
+        border-radius: 30px;
+        border-color: rgba(0, 0, 0, 0.3);
+        outline: none;
+        padding-left: 20px;
+        font-size: 15px;
+    }
+
+    .checkoutTable {
+        width: 99%;
+        height: auto;
+    }
+
+    .checkoutTable tr td {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-right: 20px;
+        font-size: 15px;
+    }
+
+    .checkoutTable tr td:first-child {
+        text-align: left;
+    }
+
+    .checkoutTable tr td:nth-child(2) {
+        text-align: right;
+        color: #008000;
+    }
+
+    .checkoutTable tr td {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .totalCost {
+        font-size: 20px;
+        padding-top: 25px;
+        padding-bottom: 10px;
+    }
+
+    .totalCost span {
+        float: right;
+        margin-right: 20px;
+        color: #008000;
+    }
+
+    #checkoutButtonBig {
+        width: 92%;
+        position: relative;
+        left: -30px;
+        font-size: 15px;
+    }
+
+/* CHECKOUT STYLESHEET */
+#checkoutToolbar {
+    background: #304FFE;
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    
+}
